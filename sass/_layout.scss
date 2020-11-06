@@ -1,0 +1,56 @@
+.container {
+    max-width: 100rem;
+    margin: 8rem auto;
+    background-color: var(--c-grey-light-2);
+    box-shadow: var(--shadow-dark);
+
+    min-height: 50rem;
+}
+
+.header {
+    height: 7rem;
+    background-color: #e6c9dd;
+    border-bottom: var(--line);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+}
+
+.navigation {
+    background-color: #8f5f81;
+    flex: 0 0 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mainbar {
+    background-color:#fff;
+    flex: 1;
+} 
+
+.detail {
+    display: flex;
+    padding: 4.5rem;
+    background-color: var(--c-grey-light-1);
+    border-bottom: var(--line);
+}
+
+.description {
+    font-size: 1.2rem;
+    flex: 0 0 60%;
+    margin-right: 4.5rem;
+    padding: 3rem;
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+}
+
+.user-reviews {
+    flex: 1;
+    background-color: red;
+}
