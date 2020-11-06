@@ -1,6 +1,6 @@
 :root {
   --c-primary: #d4943b;
-  --c-primary-light: #512b58;
+  --c-primary-light: #d6a35b;
   --c-primary-dark: #2c003e;
   --c-grey-light-1: #faf9f9;
   --c-grey-light-2: #f4f2f2;
@@ -62,9 +62,9 @@ body {
       background-color: var(--c-grey-light-3); }
     .search__input::-webkit-input-placeholder {
       font-weight: 100;
-      color: --c-grey-light-4; }
-  .search__input:focus + .search__button {
-    background-color: var(--c-grey-light-3); }
+      color: var(--c-grey-light-4); }
+    .search__input__input:focus + .search__input__button {
+      background-color: var(--c-grey-light-3); }
   .search__button {
     border: none;
     background-color: var(--c-grey-light-2); }
@@ -75,7 +75,7 @@ body {
   .search__icon {
     height: 1.8rem;
     width: 1.8rem;
-    fill: #111; }
+    fill: var(--c-grey-dark-1); }
 
 .user-nav {
   align-self: stretch;
@@ -94,7 +94,7 @@ body {
   .user-nav__icon {
     height: 2.25rem;
     width: 2.25rem;
-    fill: var(--c-grey-dark-1); }
+    fill: var(--c-primary-dark); }
   .user-nav__notificantion {
     font-size: .8rem;
     height: 1.75rem;
@@ -218,8 +218,15 @@ body {
   background-color: transparent;
   cursor: pointer;
   transition: all .2s; }
+  .btn-inline span {
+    margin-left: 3px;
+    transition: margin-left .2s; }
   .btn-inline:hover {
-    color: var(--c-grey-dark-1);
+    color: var(--c-grey-dark-1); }
+    .btn-inline:hover span {
+      margin-left: 8px; }
+  .btn-inline:focus {
+    outline: none;
     animation: pulsate 1s infinite; }
 
 @keyframes pulsate {
@@ -275,6 +282,69 @@ body {
     .recommend__photo:not(:last-child) {
       margin-right: -1.5rem; }
 
+.review {
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  overflow: hidden; }
+  .review__text {
+    margin-bottom: 2rem;
+    z-index: 10;
+    position: relative; }
+  .review__user {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .review__photo {
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%;
+    margin-right: 1.5rem; }
+  .review__user-box {
+    margin-right: auto; }
+  .review__user-name {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    margin-bottom: .5rem; }
+  .review__user-date {
+    font-size: .9rem;
+    color: var(--c-grey-dark-3); }
+  .review__rating {
+    color: var(--c-primary);
+    font-size: 2rem; }
+  .review::before {
+    content: "\201C";
+    position: absolute;
+    top: -2.5rem;
+    left: -.9rem;
+    line-height: 1;
+    font-size: 20rem;
+    color: var(--c-grey-light-2);
+    font-family: sans-serif;
+    z-index: 1; }
+
+.cta {
+  padding: 3.5rem 0;
+  text-align: center; }
+  .cta__book-now {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem; }
+
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: none;
+  background-image: linear-gradient(to right, var(--c-primary-light), var(--c-primary-dark));
+  color: #fff;
+  padding: 3rem; }
+
 .container {
   max-width: 100rem;
   margin: 8rem auto;
@@ -294,7 +364,7 @@ body {
   display: flex; }
 
 .navigation {
-  background-color: #8f5f81;
+  background-color: #a37e98;
   flex: 0 0 18%;
   display: flex;
   flex-direction: column;
@@ -305,13 +375,13 @@ body {
   flex: 1; }
 
 .detail {
+  font-size: 1.2rem;
   display: flex;
   padding: 4.5rem;
   background-color: var(--c-grey-light-1);
   border-bottom: var(--line); }
 
 .description {
-  font-size: 1.2rem;
   flex: 0 0 60%;
   margin-right: 4.5rem;
   padding: 3rem;
@@ -320,4 +390,6 @@ body {
 
 .user-reviews {
   flex: 1;
-  background-color: red; }
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
